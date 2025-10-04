@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Pages>
+    <Page title="untitled">
+        <text>
+            text page
+        </text>
+        <Headers>
+            <Header title="">
+                <searchterm> tag1 header </searchterm>
+                <searchterm> tag2 header </searchterm>
+                <text>
+                    text header
+                </text>
+                <Subheaders>
+                    <Subheader title = "">
+                        <searchterms>
+                            <searchterm> tag1 subheader </searchterm>
+                            <searchterm> tag2 subheader </searchterm>
+                        </searchterms>
+                        <text>
+                            text subheader
+                        </text>
+                    </Subheader>
+                </Subheaders>
+            </Header>
+        </Headers>
+    </Page>
+</Pages>

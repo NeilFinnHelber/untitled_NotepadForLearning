@@ -1,4 +1,4 @@
-package org.example.data;
+package org.example.dataReader;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -13,7 +13,6 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.*;
 
 import java.awt.*;
-import java.awt.event.*;
 import java.io.*;
 import java.util.*;
 
