@@ -8,7 +8,7 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
+import java.util.ArrayList;
 
 public class Writer {
 String localAppData = System.getenv("LOCALAPPDATA"); //get users %LocalAppData% path
@@ -71,8 +71,14 @@ private void writeToFile_firstTime(String pageFileName, String title) {
             //write the given title and standard xml components
             page.setTitle(title);
             page.setText("write text here");
-            page.setHeaders(null);
 
+
+            ArrayList<Header> temp = new ArrayList<>();
+            temp.add(new Header());
+            temp.add(new Header());
+            temp.add(new Header());
+
+            page.setHeaders(temp);
 
             //write the title in the given file
             try {
@@ -85,13 +91,13 @@ private void writeToFile_firstTime(String pageFileName, String title) {
 }
 
 //here text of a file can be updated once the file already exists
-public void writeToFile_updateFile(String pageFileName, String title, String text, Header header) {
+public void writeToFile_updateFile(String pageFileName, String title, String text, ArrayList<Header> header) {
         file_fromFilePath = new File(folderPath, pageFileName);
         if (file_fromFilePath.exists()) {
             page = new Page();
             page.setTitle(title);
             page.setText(text);
-            page.setHeaders((List<Header>) header);
+            page.setHeaders(header);
 
             try {
                 mapper.writeValue(file_fromFilePath, page);
@@ -106,6 +112,12 @@ public void writeToFile_updateFile(String pageFileName, String title, String tex
 
     public static void main(String[] args){
         Writer W = new Writer("title", "title");
-        W.writeToFile_updateFile("title.xml", "title", "this is an example text", W.header);
+
+        ArrayList<Header> temp = new ArrayList<>();
+        temp.add(new Header("title"));
+        temp.add(new Header("title"));
+
+
+        W.writeToFile_updateFile("title.xml", "title", "this is an example text", temp);
     }
 }
