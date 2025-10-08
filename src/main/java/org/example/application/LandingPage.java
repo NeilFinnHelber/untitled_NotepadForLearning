@@ -1,13 +1,20 @@
 package org.example.application;
 
 import org.example.dataReader.Reader;
+import org.example.dataReader.Writer;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 
-public class LandingPage extends JFrame {
+public class LandingPage extends JFrame implements ActionListener {
     Reader reader = new Reader();
+    Writer writer;
+    JButton openBackupButton = new JButton("Open Backup");
+    JButton createPageButton = new JButton("Create Page");
+    JPanel pagePanel;
 
     public LandingPage() {
         this.setTitle("Title");
@@ -16,39 +23,63 @@ public class LandingPage extends JFrame {
         this.setSize(800, 500);
 
         JPanel topPanel = new JPanel();
-        JPanel pagePanel = new JPanel(new GridLayout(0,5,10,10));
+        pagePanel = new JPanel(new GridLayout(0,5,10,10));
 
-        JButton createPageButton = new JButton("Create Page");
+
         createPageButton.setFocusable(false);
-        JButton openBackupButton = new JButton("Open Backup");
+
         openBackupButton.setFocusable(false);
         topPanel.add(createPageButton, BorderLayout.EAST);
         topPanel.add(openBackupButton, BorderLayout.WEST);
 
 
+Load_Reload_PagePanel();
 
-        for (File file : reader.getAllFilesInPageDirectory()) {
-            JButton PageButton = new JButton(file.getName().replace(".xml", ""));
-            
-            PageButton.setPreferredSize(new Dimension(100, 350));
-            pagePanel.add(PageButton);
-
-        }
 
         JScrollPane scrollPane = new JScrollPane(pagePanel,
                 JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
                 JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
         scrollPane.getVerticalScrollBar().setUnitIncrement(20);
+        scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
 
         createPageButton.setPreferredSize(new Dimension(500, 80));
         openBackupButton.setPreferredSize(new Dimension(200, 80));
+
+        createPageButton.addActionListener(this);
+        openBackupButton.addActionListener(this);
 
         this.setLayout(new BorderLayout());
         this.add(scrollPane, BorderLayout.CENTER);
         this.add(topPanel, BorderLayout.NORTH);
 
         this.setVisible(true);
+    }
+
+
+    public File Load_Reload_PagePanel(){
+        pagePanel.removeAll();
+        
+        for (File file : reader.getAllFilesInPageDirectory()) {
+            JButton PageButton = new JButton(file.getName().replace(".xml", ""));
+
+            PageButton.setPreferredSize(new Dimension(100, 350));
+            pagePanel.add(PageButton);
+
+        }
+        pagePanel.revalidate();
+        pagePanel.repaint();
+
+        return null;
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == createPageButton) {
+            writer = new Writer( "title");
+            Load_Reload_PagePanel();
+        }
     }
 }
 

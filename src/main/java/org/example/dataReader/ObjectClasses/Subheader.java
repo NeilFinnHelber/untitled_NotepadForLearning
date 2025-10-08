@@ -1,22 +1,28 @@
 package org.example.dataReader.ObjectClasses;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class Subheader {
-    String title;
-    ArrayList<String> searchTerms;
-    String text;
+
+    @JacksonXmlProperty(localName = "title", isAttribute = true)
+    private String title = "";
+
+    @JacksonXmlProperty(localName = "text")
+    private String text;
+
+    @JacksonXmlElementWrapper(localName = "searchTerms")
+    @JacksonXmlProperty(localName = "searchTerm")
+    private List<String> searchTerm;
 
     public Subheader(){}
-    public Subheader(String title, ArrayList<String> searchTerms, String text) {
-        super();
-        this.title = title;
-        this.searchTerms = searchTerms;
-        this.text = text;
-    }
 
 
 
+    
     public String getTitle() {
         return title;
     }
@@ -25,19 +31,19 @@ public class Subheader {
         this.title = title;
     }
 
-    public ArrayList<String> getSearchTerms() {
-        return searchTerms;
-    }
-
-    public void setSearchTerms(ArrayList<String> searchTerms) {
-        this.searchTerms = searchTerms;
-    }
-
     public String getText() {
         return text;
     }
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public List<String> getSearchTerm() {
+        return searchTerm;
+    }
+
+    public void setSearchTerm(List<String> searchTerm) {
+        this.searchTerm = searchTerm;
     }
 }
