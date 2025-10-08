@@ -18,19 +18,19 @@ public class Page {
 
     @JacksonXmlElementWrapper(localName = "Headers")
     @JacksonXmlProperty(localName = "Header")
-    private List<Header> header = new ArrayList<>();
-    
+    private List<Header> headers = new ArrayList<>();
+
     public Page() {}
 
 
 
 
     public List<Header> getHeaders() {
-        return header;
+        return headers;
     }
 
     public void setHeaders(List<Header> headers) {
-        this.header = headers;
+        this.headers = headers;
     }
 
 
