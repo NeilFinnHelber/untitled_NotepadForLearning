@@ -16,8 +16,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class Reader {
-    String localAppData = System.getenv("LOCALAPPDATA"); //get users %LocalAppData% path
-    File file_folderUnderFullPath = new File(localAppData, "untitled-learnApp");
+    public String localAppData = System.getenv("LOCALAPPDATA"); //get users %LocalAppData% path
+    public File file_folderUnderFullPath = new File(localAppData, "untitled-learnApp");
     List<File> filesInDirectory = new ArrayList<File>();
 
     List<Page> pagesInDirectory = new ArrayList<Page>();

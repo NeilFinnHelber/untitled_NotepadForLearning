@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.dataReader.WriterAndReaderTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2025-10-08T21:23:51.805Z" hostname="VERKKO-HALKEAMA" time="0.241">
+  <properties/>
+  <testcase name="File name test: &quot;test&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.079"/>
+  <testcase name="File name test: &quot;hello world&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.012"/>
+  <testcase name="File name test: &quot;hello-world&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.006"/>
+  <testcase name="File name test: &quot;hello_world&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.005"/>
+  <testcase name="File name test: &quot;hello#world&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.007"/>
+  <testcase name="File name test: &quot;öööäääüüü&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.007"/>
+  <testcase name="File name test: &quot;fihwerhstfuierghserihghksehkhaospfhseorgpbesribgfsepjfhsweshfaiefosberdhgsebrbfs&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.006"/>
+  <testcase name="File name test: &quot;test&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.028"/>
+  <testcase name="File name test: &quot;####&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.011"/>
+  <testcase name="File name test: &quot;...p&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.005"/>
+  <testcase name="File name test: &quot;-----------------------------------------------------------------------&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.006"/>
+  <testcase name="File name test: &quot;_____&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.007"/>
+  <testcase name="checkForIsValideNameCheck()" classname="org.example.dataReader.WriterAndReaderTest" time="0.009"/>
+  <system-out><![CDATA[file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+file already exists
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

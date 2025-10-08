@@ -77,7 +77,7 @@ Load_Reload_PagePanel();
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == createPageButton) {
-            writer = new Writer("title", "title");
+            writer = new Writer( "title");
             Load_Reload_PagePanel();
         }
     }
