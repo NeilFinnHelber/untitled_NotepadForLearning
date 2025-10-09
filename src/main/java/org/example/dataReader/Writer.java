@@ -1,5 +1,7 @@
 package org.example.dataReader;
 
+import com.fasterxml.jackson.core.exc.StreamWriteException;
+import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import org.example.dataReader.ObjectClasses.Header;
 import org.example.dataReader.ObjectClasses.Page;
@@ -103,11 +105,11 @@ public class Writer {
 
         file_fromFilePath = validateFileName(pageFileName, false);
 
-            page = new Page();
-            page = reader.readDataFromXMLFile(file_fromFilePath);
+        page = new Page();
+        page = reader.readDataFromXMLFile(file_fromFilePath);
 
-            if (pageTitle != null) page.setTitle(pageTitle);
-            if (pageText != null) page.setText(pageText);
+        if (pageTitle != null) page.setTitle(pageTitle);
+        if (pageText != null) page.setText(pageText);
 
 
         try {
@@ -145,10 +147,10 @@ public class Writer {
     public void writeToFile_updateHeader(String pageFileName, int headerID, String headerTitle, String headerText, ArrayList<String> headerSearchTerms) {
         file_fromFilePath = validateFileName(pageFileName, false);
 
-            page = new Page();
-            page = reader.readDataFromXMLFile(file_fromFilePath);
+        page = new Page();
+        page = reader.readDataFromXMLFile(file_fromFilePath);
 
-            List<Header> headers = page.getHeaders(); //set headers
+        List<Header> headers = page.getHeaders(); //set headers
 
         if (headers.get(headerID) != null) {
 
@@ -168,6 +170,53 @@ public class Writer {
 
         } else { //if (however that were to happen) the header doesn't exist, create a new one in its image
             writeToFile_createHeader(pageFileName, headerTitle);
+        }
+    }
+
+    public void writeToFile_createSubheader(String pageFileName, int headerID, String subheaderTitle) {
+        file_fromFilePath = validateFileName(pageFileName, false);
+
+        page = new Page();
+        page = reader.readDataFromXMLFile(file_fromFilePath);
+        List<Header> headers = page.getHeaders();
+
+        if (headers.get(headerID) != null) {
+            List<Subheader> subheaders = headers.get(headerID).getSubheaders(); //set the subheaders of the current header
+
+            subheaders.add(new Subheader(subheaderTitle)); //add new subheaders
+
+            page.setHeaders(headers); //update the headers with the new subheader attached
+
+            try {
+                mapper.writerWithDefaultPrettyPrinter().writeValue(file_fromFilePath, page);
+
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    public void writeToFile_updateSubheader(String pageFileName, int headerID, int subheaderID, String subheaderTitle, String subheaderText, ArrayList<String> subheaderSearchTerms) {
+        file_fromFilePath = validateFileName(pageFileName, false);
+
+        page = new Page();
+        page = reader.readDataFromXMLFile(file_fromFilePath);
+
+        List<Header> headers = page.getHeaders();
+        List<Subheader> subheaders = headers.get(headerID).getSubheaders();
+
+        if (subheaderTitle != null) subheaders.get(subheaderID).setTitle(subheaderTitle);
+        if (subheaderText != null) subheaders.get(subheaderID).setText(subheaderText);
+        if (subheaderSearchTerms != null) subheaders.get(subheaderID).setSearchTerm(subheaderSearchTerms);
+
+        page.setHeaders(headers);
+
+
+        try {
+            mapper.writerWithDefaultPrettyPrinter().writeValue(file_fromFilePath, page);
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -199,5 +248,9 @@ public class Writer {
         //W.writeToFile_createHeader("title", "welcome to the world");
 
         //W.writeToFile_updateHeader("title", 0, "new header", "", tempSearchTerms);
+
+        //W.writeToFile_createSubheader("title", 0, "a tasty pizza the action");
+
+        //W.writeToFile_updateSubheader("title", 0, 0, "new subheader title", "",tempSearchTerms);
     }
 }
