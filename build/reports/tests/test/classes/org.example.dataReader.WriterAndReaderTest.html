@@ -23,13 +23,13 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">13</div>
+<div class="counter">6</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">6</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.188s</div>
+<div class="counter">0.179s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,12 +61,468 @@
 <div class="tab-container">
 <ul class="tabLinks">
 <li>
+<a href="#">Failed tests</a>
+</li>
+<li>
 <a href="#">Tests</a>
 </li>
 <li>
 <a href="#">Standard output</a>
 </li>
 </ul>
+<div class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="updateFile_pageComponent_usingWriter()[1]"></a>
+<h3 class="failures">Title Update Test: &quot;{0}&quot;</h3>
+<span class="code">
+<pre>java.lang.RuntimeException: com.fasterxml.jackson.core.JsonParseException: Unexpected EOF in prolog
+ at [row,col {unknown-source}]: [1,0]
+	at org.example.dataReader.Reader.readDataFromXMLFile(Reader.java:116)
+	at org.example.dataReader.Writer.writeToFile_updatePage(Writer.java:103)
+	at org.example.dataReader.WriterAndReaderTest.testPageTitle(WriterAndReaderTest.java:126)
+	at org.example.dataReader.WriterAndReaderTest.updateFile_pageComponent_usingWriter(WriterAndReaderTest.java:117)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.AbstractList$RandomAccessSpliterator.forEachRemaining(AbstractList.java:722)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:807)
+	at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:294)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
+	at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:294)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1716)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
+	at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:294)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1716)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected EOF in prolog
+ at [row,col {unknown-source}]: [1,0]
+	at com.fasterxml.jackson.dataformat.xml.XmlFactory._initializeXmlReader(XmlFactory.java:744)
+	at com.fasterxml.jackson.dataformat.xml.XmlFactory._createParser(XmlFactory.java:600)
+	at com.fasterxml.jackson.dataformat.xml.XmlFactory._createParser(XmlFactory.java:30)
+	at com.fasterxml.jackson.core.JsonFactory.createParser(JsonFactory.java:1220)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3713)
+	at org.example.dataReader.Reader.readDataFromXMLFile(Reader.java:112)
+	... 48 more
+Caused by: com.ctc.wstx.exc.WstxEOFException: Unexpected EOF in prolog
+ at [row,col {unknown-source}]: [1,0]
+	at app//com.ctc.wstx.sr.StreamScanner.throwUnexpectedEOF(StreamScanner.java:701)
+	at app//com.ctc.wstx.sr.BasicStreamReader.handleEOF(BasicStreamReader.java:2235)
+	at app//com.ctc.wstx.sr.BasicStreamReader.nextFromProlog(BasicStreamReader.java:2141)
+	at app//com.ctc.wstx.sr.BasicStreamReader.next(BasicStreamReader.java:1180)
+	at app//com.fasterxml.jackson.dataformat.xml.XmlFactory._initializeXmlReader(XmlFactory.java:739)
+	... 53 more
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="updateFile_pageComponent_usingWriter()[2]"></a>
+<h3 class="failures">Title Update Test: &quot;{0}&quot;</h3>
+<span class="code">
+<pre>java.lang.RuntimeException: com.fasterxml.jackson.core.JsonParseException: Unexpected EOF in prolog
+ at [row,col {unknown-source}]: [1,0]
+	at org.example.dataReader.Reader.readDataFromXMLFile(Reader.java:116)
+	at org.example.dataReader.Writer.writeToFile_updatePage(Writer.java:103)
+	at org.example.dataReader.WriterAndReaderTest.testPageTitle(WriterAndReaderTest.java:126)
+	at org.example.dataReader.WriterAndReaderTest.updateFile_pageComponent_usingWriter(WriterAndReaderTest.java:117)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.AbstractList$RandomAccessSpliterator.forEachRemaining(AbstractList.java:722)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:807)
+	at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:294)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
+	at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:294)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1716)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
+	at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:294)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1716)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected EOF in prolog
+ at [row,col {unknown-source}]: [1,0]
+	at com.fasterxml.jackson.dataformat.xml.XmlFactory._initializeXmlReader(XmlFactory.java:744)
+	at com.fasterxml.jackson.dataformat.xml.XmlFactory._createParser(XmlFactory.java:600)
+	at com.fasterxml.jackson.dataformat.xml.XmlFactory._createParser(XmlFactory.java:30)
+	at com.fasterxml.jackson.core.JsonFactory.createParser(JsonFactory.java:1220)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3713)
+	at org.example.dataReader.Reader.readDataFromXMLFile(Reader.java:112)
+	... 48 more
+Caused by: com.ctc.wstx.exc.WstxEOFException: Unexpected EOF in prolog
+ at [row,col {unknown-source}]: [1,0]
+	at app//com.ctc.wstx.sr.StreamScanner.throwUnexpectedEOF(StreamScanner.java:701)
+	at app//com.ctc.wstx.sr.BasicStreamReader.handleEOF(BasicStreamReader.java:2235)
+	at app//com.ctc.wstx.sr.BasicStreamReader.nextFromProlog(BasicStreamReader.java:2141)
+	at app//com.ctc.wstx.sr.BasicStreamReader.next(BasicStreamReader.java:1180)
+	at app//com.fasterxml.jackson.dataformat.xml.XmlFactory._initializeXmlReader(XmlFactory.java:739)
+	... 53 more
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="updateFile_pageComponent_usingWriter()[3]"></a>
+<h3 class="failures">Title Update Test: &quot;{0}&quot;</h3>
+<span class="code">
+<pre>java.lang.RuntimeException: com.fasterxml.jackson.core.JsonParseException: Unexpected EOF in prolog
+ at [row,col {unknown-source}]: [1,0]
+	at org.example.dataReader.Reader.readDataFromXMLFile(Reader.java:116)
+	at org.example.dataReader.Writer.writeToFile_updatePage(Writer.java:103)
+	at org.example.dataReader.WriterAndReaderTest.testPageTitle(WriterAndReaderTest.java:126)
+	at org.example.dataReader.WriterAndReaderTest.updateFile_pageComponent_usingWriter(WriterAndReaderTest.java:117)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.AbstractList$RandomAccessSpliterator.forEachRemaining(AbstractList.java:722)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:807)
+	at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:294)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
+	at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:294)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1716)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
+	at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:294)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1716)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected EOF in prolog
+ at [row,col {unknown-source}]: [1,0]
+	at com.fasterxml.jackson.dataformat.xml.XmlFactory._initializeXmlReader(XmlFactory.java:744)
+	at com.fasterxml.jackson.dataformat.xml.XmlFactory._createParser(XmlFactory.java:600)
+	at com.fasterxml.jackson.dataformat.xml.XmlFactory._createParser(XmlFactory.java:30)
+	at com.fasterxml.jackson.core.JsonFactory.createParser(JsonFactory.java:1220)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3713)
+	at org.example.dataReader.Reader.readDataFromXMLFile(Reader.java:112)
+	... 48 more
+Caused by: com.ctc.wstx.exc.WstxEOFException: Unexpected EOF in prolog
+ at [row,col {unknown-source}]: [1,0]
+	at app//com.ctc.wstx.sr.StreamScanner.throwUnexpectedEOF(StreamScanner.java:701)
+	at app//com.ctc.wstx.sr.BasicStreamReader.handleEOF(BasicStreamReader.java:2235)
+	at app//com.ctc.wstx.sr.BasicStreamReader.nextFromProlog(BasicStreamReader.java:2141)
+	at app//com.ctc.wstx.sr.BasicStreamReader.next(BasicStreamReader.java:1180)
+	at app//com.fasterxml.jackson.dataformat.xml.XmlFactory._initializeXmlReader(XmlFactory.java:739)
+	... 53 more
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="updateFile_pageComponent_usingWriter()[4]"></a>
+<h3 class="failures">Title Update Test: &quot;{0}&quot;</h3>
+<span class="code">
+<pre>java.lang.RuntimeException: com.fasterxml.jackson.core.JsonParseException: Unexpected EOF in prolog
+ at [row,col {unknown-source}]: [1,0]
+	at org.example.dataReader.Reader.readDataFromXMLFile(Reader.java:116)
+	at org.example.dataReader.Writer.writeToFile_updatePage(Writer.java:103)
+	at org.example.dataReader.WriterAndReaderTest.testPageTitle(WriterAndReaderTest.java:126)
+	at org.example.dataReader.WriterAndReaderTest.updateFile_pageComponent_usingWriter(WriterAndReaderTest.java:117)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.AbstractList$RandomAccessSpliterator.forEachRemaining(AbstractList.java:722)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:807)
+	at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:294)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
+	at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:294)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1716)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
+	at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:294)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1716)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected EOF in prolog
+ at [row,col {unknown-source}]: [1,0]
+	at com.fasterxml.jackson.dataformat.xml.XmlFactory._initializeXmlReader(XmlFactory.java:744)
+	at com.fasterxml.jackson.dataformat.xml.XmlFactory._createParser(XmlFactory.java:600)
+	at com.fasterxml.jackson.dataformat.xml.XmlFactory._createParser(XmlFactory.java:30)
+	at com.fasterxml.jackson.core.JsonFactory.createParser(JsonFactory.java:1220)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3713)
+	at org.example.dataReader.Reader.readDataFromXMLFile(Reader.java:112)
+	... 48 more
+Caused by: com.ctc.wstx.exc.WstxEOFException: Unexpected EOF in prolog
+ at [row,col {unknown-source}]: [1,0]
+	at app//com.ctc.wstx.sr.StreamScanner.throwUnexpectedEOF(StreamScanner.java:701)
+	at app//com.ctc.wstx.sr.BasicStreamReader.handleEOF(BasicStreamReader.java:2235)
+	at app//com.ctc.wstx.sr.BasicStreamReader.nextFromProlog(BasicStreamReader.java:2141)
+	at app//com.ctc.wstx.sr.BasicStreamReader.next(BasicStreamReader.java:1180)
+	at app//com.fasterxml.jackson.dataformat.xml.XmlFactory._initializeXmlReader(XmlFactory.java:739)
+	... 53 more
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="updateFile_pageComponent_usingWriter()[5]"></a>
+<h3 class="failures">Title Update Test: &quot;{0}&quot;</h3>
+<span class="code">
+<pre>java.lang.RuntimeException: com.fasterxml.jackson.core.JsonParseException: Unexpected EOF in prolog
+ at [row,col {unknown-source}]: [1,0]
+	at org.example.dataReader.Reader.readDataFromXMLFile(Reader.java:116)
+	at org.example.dataReader.Writer.writeToFile_updatePage(Writer.java:103)
+	at org.example.dataReader.WriterAndReaderTest.testPageTitle(WriterAndReaderTest.java:126)
+	at org.example.dataReader.WriterAndReaderTest.updateFile_pageComponent_usingWriter(WriterAndReaderTest.java:117)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.AbstractList$RandomAccessSpliterator.forEachRemaining(AbstractList.java:722)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:807)
+	at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:294)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
+	at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:294)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1716)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
+	at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:294)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1716)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected EOF in prolog
+ at [row,col {unknown-source}]: [1,0]
+	at com.fasterxml.jackson.dataformat.xml.XmlFactory._initializeXmlReader(XmlFactory.java:744)
+	at com.fasterxml.jackson.dataformat.xml.XmlFactory._createParser(XmlFactory.java:600)
+	at com.fasterxml.jackson.dataformat.xml.XmlFactory._createParser(XmlFactory.java:30)
+	at com.fasterxml.jackson.core.JsonFactory.createParser(JsonFactory.java:1220)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3713)
+	at org.example.dataReader.Reader.readDataFromXMLFile(Reader.java:112)
+	... 48 more
+Caused by: com.ctc.wstx.exc.WstxEOFException: Unexpected EOF in prolog
+ at [row,col {unknown-source}]: [1,0]
+	at app//com.ctc.wstx.sr.StreamScanner.throwUnexpectedEOF(StreamScanner.java:701)
+	at app//com.ctc.wstx.sr.BasicStreamReader.handleEOF(BasicStreamReader.java:2235)
+	at app//com.ctc.wstx.sr.BasicStreamReader.nextFromProlog(BasicStreamReader.java:2141)
+	at app//com.ctc.wstx.sr.BasicStreamReader.next(BasicStreamReader.java:1180)
+	at app//com.fasterxml.jackson.dataformat.xml.XmlFactory._initializeXmlReader(XmlFactory.java:739)
+	... 53 more
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="updateFile_pageComponent_usingWriter()[6]"></a>
+<h3 class="failures">Title Update Test: &quot;{0}&quot;</h3>
+<span class="code">
+<pre>java.lang.RuntimeException: com.fasterxml.jackson.core.JsonParseException: Unexpected EOF in prolog
+ at [row,col {unknown-source}]: [1,0]
+	at org.example.dataReader.Reader.readDataFromXMLFile(Reader.java:116)
+	at org.example.dataReader.Writer.writeToFile_updatePage(Writer.java:103)
+	at org.example.dataReader.WriterAndReaderTest.testPageTitle(WriterAndReaderTest.java:126)
+	at org.example.dataReader.WriterAndReaderTest.updateFile_pageComponent_usingWriter(WriterAndReaderTest.java:117)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.AbstractList$RandomAccessSpliterator.forEachRemaining(AbstractList.java:722)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:807)
+	at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:294)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
+	at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:294)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1716)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
+	at java.base/java.util.stream.ReferencePipeline$7$1FlatMap.accept(ReferencePipeline.java:294)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1716)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:636)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected EOF in prolog
+ at [row,col {unknown-source}]: [1,0]
+	at com.fasterxml.jackson.dataformat.xml.XmlFactory._initializeXmlReader(XmlFactory.java:744)
+	at com.fasterxml.jackson.dataformat.xml.XmlFactory._createParser(XmlFactory.java:600)
+	at com.fasterxml.jackson.dataformat.xml.XmlFactory._createParser(XmlFactory.java:30)
+	at com.fasterxml.jackson.core.JsonFactory.createParser(JsonFactory.java:1220)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3713)
+	at org.example.dataReader.Reader.readDataFromXMLFile(Reader.java:112)
+	... 48 more
+Caused by: com.ctc.wstx.exc.WstxEOFException: Unexpected EOF in prolog
+ at [row,col {unknown-source}]: [1,0]
+	at app//com.ctc.wstx.sr.StreamScanner.throwUnexpectedEOF(StreamScanner.java:701)
+	at app//com.ctc.wstx.sr.BasicStreamReader.handleEOF(BasicStreamReader.java:2235)
+	at app//com.ctc.wstx.sr.BasicStreamReader.nextFromProlog(BasicStreamReader.java:2141)
+	at app//com.ctc.wstx.sr.BasicStreamReader.next(BasicStreamReader.java:1180)
+	at app//com.fasterxml.jackson.dataformat.xml.XmlFactory._initializeXmlReader(XmlFactory.java:739)
+	... 53 more
+</pre>
+</span>
+</div>
+</div>
 <div class="tab">
 <h2>Tests</h2>
 <table>
@@ -79,82 +535,40 @@
 </tr>
 </thead>
 <tr>
-<td class="success">checkForIsValideNameCheck()</td>
-<td class="success">checkForIsValideNameCheck()</td>
-<td class="success">0.009s</td>
-<td class="success">passed</td>
+<td class="failures">Title Update Test: &quot;{0}&quot;</td>
+<td class="failures">updateFile_pageComponent_usingWriter()[1]</td>
+<td class="failures">0.090s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
-<td class="success">File name test: &quot;...p&quot;</td>
-<td class="success">createFilesWithWeirdNames(String)[10]</td>
-<td class="success">0.005s</td>
-<td class="success">passed</td>
+<td class="failures">Title Update Test: &quot;{0}&quot;</td>
+<td class="failures">updateFile_pageComponent_usingWriter()[2]</td>
+<td class="failures">0.015s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
-<td class="success">File name test: &quot;-----------------------------------------------------------------------&quot;</td>
-<td class="success">createFilesWithWeirdNames(String)[11]</td>
-<td class="success">0.006s</td>
-<td class="success">passed</td>
+<td class="failures">Title Update Test: &quot;{0}&quot;</td>
+<td class="failures">updateFile_pageComponent_usingWriter()[3]</td>
+<td class="failures">0.016s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
-<td class="success">File name test: &quot;_____&quot;</td>
-<td class="success">createFilesWithWeirdNames(String)[12]</td>
-<td class="success">0.007s</td>
-<td class="success">passed</td>
+<td class="failures">Title Update Test: &quot;{0}&quot;</td>
+<td class="failures">updateFile_pageComponent_usingWriter()[4]</td>
+<td class="failures">0.014s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
-<td class="success">File name test: &quot;test&quot;</td>
-<td class="success">createFilesWithWeirdNames(String)[1]</td>
-<td class="success">0.079s</td>
-<td class="success">passed</td>
+<td class="failures">Title Update Test: &quot;{0}&quot;</td>
+<td class="failures">updateFile_pageComponent_usingWriter()[5]</td>
+<td class="failures">0.022s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
-<td class="success">File name test: &quot;hello world&quot;</td>
-<td class="success">createFilesWithWeirdNames(String)[2]</td>
-<td class="success">0.012s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">File name test: &quot;hello-world&quot;</td>
-<td class="success">createFilesWithWeirdNames(String)[3]</td>
-<td class="success">0.006s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">File name test: &quot;hello_world&quot;</td>
-<td class="success">createFilesWithWeirdNames(String)[4]</td>
-<td class="success">0.005s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">File name test: &quot;hello#world&quot;</td>
-<td class="success">createFilesWithWeirdNames(String)[5]</td>
-<td class="success">0.007s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">File name test: &quot;öööäääüüü&quot;</td>
-<td class="success">createFilesWithWeirdNames(String)[6]</td>
-<td class="success">0.007s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">File name test: &quot;fihwerhstfuierghserihghksehkhaospfhseorgpbesribgfsepjfhsweshfaiefosberdhgsebrbfs&quot;</td>
-<td class="success">createFilesWithWeirdNames(String)[7]</td>
-<td class="success">0.006s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">File name test: &quot;test&quot;</td>
-<td class="success">createFilesWithWeirdNames(String)[8]</td>
-<td class="success">0.028s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">File name test: &quot;####&quot;</td>
-<td class="success">createFilesWithWeirdNames(String)[9]</td>
-<td class="success">0.011s</td>
-<td class="success">passed</td>
+<td class="failures">Title Update Test: &quot;{0}&quot;</td>
+<td class="failures">updateFile_pageComponent_usingWriter()[6]</td>
+<td class="failures">0.022s</td>
+<td class="failures">failed</td>
 </tr>
 </table>
 </div>
@@ -162,39 +576,6 @@
 <h2>Standard output</h2>
 <span class="code">
 <pre>file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
-file already exists
 file already exists
 file already exists
 file already exists
@@ -210,7 +591,7 @@ file already exists
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 8.14</a> at 8 Oct 2025, 23:23:52</p>
+<a href="https://www.gradle.org">Gradle 8.14</a> at 9 Oct 2025, 13:09:47</p>
 </div>
 </div>
 </body>

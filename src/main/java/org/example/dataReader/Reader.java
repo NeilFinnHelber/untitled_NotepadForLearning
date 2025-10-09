@@ -1,6 +1,8 @@
 package org.example.dataReader;
 
+import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import org.example.dataReader.ObjectClasses.Header;
@@ -28,7 +30,11 @@ public class Reader {
     InputStream inputStream;
     TypeReference<ArrayList<Page>> typeReferenceForPage = new TypeReference<ArrayList<Page>>() {};
 
-
+public Reader (){
+    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+    mapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
+    mapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT, true);
+}
 
     public List<File> getAllFilesInPageDirectory() {
         filesInDirectory.clear();
@@ -95,6 +101,26 @@ public class Reader {
             System.err.println("File not found: " + file_folderUnderFullPath.getAbsolutePath());
         }
         return Collections.emptyList();
+    }
+
+    Page readDataFromXMLFile(File file_fromFilePath){
+
+        try{
+            Page page;
+
+            if (file_fromFilePath.exists()) {
+                page = mapper.readValue(file_fromFilePath, Page.class);
+                return page;
+            }
+        } catch (StreamReadException e) {
+            throw new RuntimeException(e);
+        } catch (DatabindException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        return new Page();
     }
 
     public static void main(String[] args) {
