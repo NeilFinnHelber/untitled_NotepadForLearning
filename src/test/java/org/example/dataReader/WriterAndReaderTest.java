@@ -268,6 +268,24 @@ class WriterAndReaderTest {
         assertEquals(subheaderText, subheaders.getFirst().getText(), "The subheaders text should be the set text");
         assertEquals(tempSearchTerms, subheaders.getFirst().getSearchTerm(), "The subheaders searchTerm should be the set searchTerm");
     }
+
+    @Test
+    void TestAllDirectReaders() {
+        testAllEditsTogheter();
+
+        file = new File(fullPathToFolder, "testingEdits.xml");
+        page = reader.readDataFromXMLFile(file);
+        List<Header> headers = page.getHeaders();
+
+        for (int i = 0; i < page.getHeaders().size(); i++) {
+            assertEquals(page.getHeaders().get(i).getTitle(), reader.getAllHeadersFromPage(file).get(i).getTitle(), "check that all headers in the file are given out");
+
+            for (int j = 0; j < headers.get(i).getSubheaders().size(); j++) {
+                assertEquals(page.getHeaders().get(i).getSubheaders().get(j).getTitle(), reader.getAllSubheadersFromHeader(file, i).get(j).getTitle(), "check that all subheaders in the file are given out");
+
+            }
+        }
+    }
 }
 
 
