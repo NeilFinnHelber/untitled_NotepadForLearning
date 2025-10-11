@@ -196,6 +196,29 @@ public class Writer {
         }
     }
 
+    public void writeToFile_createSubheader_usingHeader(String pageFileName, Header thisHeader, String subheaderTitle) {
+        file_fromFilePath = validateFileName(pageFileName, false);
+
+        page = reader.readDataFromXMLFile(file_fromFilePath);
+        List<Header> headers = page.getHeaders();
+
+        if (thisHeader != null) {
+            for (Header header : headers) {
+                if (header.getTitle().equals(thisHeader.getTitle())) {
+                    header.getSubheaders().add(new Subheader(subheaderTitle));
+                    break;
+                }
+            }
+
+            try {
+                mapper.writerWithDefaultPrettyPrinter().writeValue(file_fromFilePath, page);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+
     public void writeToFile_updateSubheader(String pageFileName, int headerID, int subheaderID, String subheaderTitle, String subheaderText, ArrayList<String> subheaderSearchTerms) {
         file_fromFilePath = validateFileName(pageFileName, false);
 

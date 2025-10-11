@@ -4,6 +4,7 @@ import org.example.dataReader.ObjectClasses.Header;
 import org.example.dataReader.ObjectClasses.Page;
 import org.example.dataReader.ObjectClasses.Subheader;
 import org.example.dataReader.Reader;
+import org.example.dataReader.Writer;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -20,10 +21,16 @@ public class PageView extends JFrame implements ActionListener {
     JPanel mainPageTitlePanel = new JPanel();
     JPanel treeNodePanel = new JPanel();
 
+    JScrollPane treeScrollPane;
+
+    JButton createHeaderButton;
+    JButton createSubheaderButton;
+
     Page page;
     List<Header> headers;
     List<Subheader> subheaders;
     Reader reader = new Reader();
+    Writer writer = new Writer();
 
     JTextField pageTitle = new JTextField();
     JTextArea pageText = new JTextArea();
@@ -85,10 +92,6 @@ public class PageView extends JFrame implements ActionListener {
         mainPageTextPanel.add(pageText, BorderLayout.CENTER);
 
 
-
-
-
-
         this.add(mainPageTextPanel, BorderLayout.NORTH);
         this.add(mainScrollPane, BorderLayout.CENTER);
         this.add(expandableHeaders_subheadersScrollPane, BorderLayout.EAST);
@@ -124,7 +127,23 @@ public class PageView extends JFrame implements ActionListener {
             tree.expandRow(i);
         }
 
-        treeNodePanel.add(new JScrollPane(tree));
+        treeNodePanel.setLayout(new BorderLayout());
+        treeNodePanel.add(treeScrollPane = new JScrollPane(tree), BorderLayout.NORTH);
+        JPanel rootNodeButtonPanel = new JPanel();
+
+        createHeaderButton = new JButton("Create Header");
+        createHeaderButton.addActionListener(this);
+
+        //createSubheaderButton = new JButton("Create Subheader");
+        //createSubheaderButton.addActionListener(this);
+
+        rootNodeButtonPanel.add(createHeaderButton);
+        //rootNodeButtonPanel.add(createSubheaderButton);
+
+        treeNodePanel.add(rootNodeButtonPanel, BorderLayout.WEST);
+        treeNodePanel.revalidate();
+        treeNodePanel.repaint();
+
     }
 
     public void load_reload_mainPanel(File file_fromFilePath) {
@@ -192,7 +211,28 @@ public class PageView extends JFrame implements ActionListener {
 
                 headerPanel.add(subheaderPanel);
             }
+            createSubheaderButton = new JButton("Create Subheader");
+            String pageFileName = file_fromFilePath.getName().substring(0, file_fromFilePath.getName().length() - 4);
+            createSubheaderButton.addActionListener(e -> {
 
+                String input = JOptionPane.showInputDialog("Enter Subheader Title");
+
+                if (input != null) {
+                    if (input.isBlank()) {
+                        JOptionPane.showMessageDialog(null, "wont create subheader without title", "warning", JOptionPane.WARNING_MESSAGE);
+                    } else {
+                        System.out.println("create subheader for header " + header.getTitle());
+                        System.out.println(header);
+                        writer.writeToFile_createSubheader_usingHeader(pageFileName, header, input);
+                        
+                        load_reload_mainPanel(file_fromFilePath);
+                        load_reload_ExpandablePanel(file_fromFilePath);
+                    }
+
+                }
+            }); //create subheader for the header
+
+            headerPanel.add(createSubheaderButton);
             mainHeaderPanel.add(headerPanel);
 
         }
@@ -202,7 +242,27 @@ public class PageView extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == createHeaderButton) {
 
+
+            String input = JOptionPane.showInputDialog("please type in a title for the header");
+            if (input != null) {
+                if (input.isBlank()) {
+                    JOptionPane.showMessageDialog(null, "wont create header without title", "warning", JOptionPane.WARNING_MESSAGE);//if the input is "" BLANK, nothing shall be created
+                } else {
+
+                    String pageFileName = file_fromFilePath.getName().substring(0, file_fromFilePath.getName().length() - 4); //removes .xml from the fileName
+                    System.out.println(pageFileName);
+                    writer.writeToFile_createHeader(pageFileName, input);
+
+                    //reload the panels
+                    load_reload_ExpandablePanel(file_fromFilePath);
+                    load_reload_mainPanel(file_fromFilePath);
+
+
+                }
+            }
+        }
     }
 
     public static void main(String[] args) {

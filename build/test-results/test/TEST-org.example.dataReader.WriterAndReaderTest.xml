@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.example.dataReader.WriterAndReaderTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-10-10T19:20:41.092Z" hostname="VERKKO-HALKEAMA" time="0.277">
+<testsuite name="org.example.dataReader.WriterAndReaderTest" tests="20" skipped="0" failures="0" errors="0" timestamp="2025-10-11T19:47:05.883Z" hostname="VERKKO-HALKEAMA" time="1.302">
   <properties/>
-  <testcase name="testAllEditsTogheter()" classname="org.example.dataReader.WriterAndReaderTest" time="0.277"/>
+  <testcase name="setupCreatingFile_forEditTests()" classname="org.example.dataReader.WriterAndReaderTest" time="0.109"/>
+  <testcase name="TestAllDirectReaders()" classname="org.example.dataReader.WriterAndReaderTest" time="0.442"/>
+  <testcase name="testAllEditsTogheter()" classname="org.example.dataReader.WriterAndReaderTest" time="0.193"/>
+  <testcase name="File name test: &quot;test&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.066"/>
+  <testcase name="File name test: &quot;hello world&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.017"/>
+  <testcase name="File name test: &quot;hello-world&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.008"/>
+  <testcase name="File name test: &quot;hello_world&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.009"/>
+  <testcase name="File name test: &quot;hello#world&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.008"/>
+  <testcase name="File name test: &quot;öööäääüüü&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.007"/>
+  <testcase name="File name test: &quot;fihwerhstfuierghserihghksehkhaospfhseorgpbesribgfsepjfhsweshfaiefosberdhgsebrbfs&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.008"/>
+  <testcase name="File name test: &quot;test&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.041"/>
+  <testcase name="File name test: &quot;####&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.014"/>
+  <testcase name="File name test: &quot;...p&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.007"/>
+  <testcase name="File name test: &quot;-----------------------------------------------------------------------&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.008"/>
+  <testcase name="File name test: &quot;_____&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.008"/>
+  <testcase name="createHeaderTest()" classname="org.example.dataReader.WriterAndReaderTest" time="0.033"/>
+  <testcase name="updateSubheaderTest()" classname="org.example.dataReader.WriterAndReaderTest" time="0.099"/>
+  <testcase name="updateHeaderTest()" classname="org.example.dataReader.WriterAndReaderTest" time="0.05"/>
+  <testcase name="updatePageComponentsTest()" classname="org.example.dataReader.WriterAndReaderTest" time="0.022"/>
+  <testcase name="createSubheaderTest()" classname="org.example.dataReader.WriterAndReaderTest" time="0.042"/>
   <system-out><![CDATA[C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(1).xml
 C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(2).xml
 C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(3).xml
@@ -12,6 +31,59 @@ C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(7).xml
 C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(8).xml
 C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(9).xml
 C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(10).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(1).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(2).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(3).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(4).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(5).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(6).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(7).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(8).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(9).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(10).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(1).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(2).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(3).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(4).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(5).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(6).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(7).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(8).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(9).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(10).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(11).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(12).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(13).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(14).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(15).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(16).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(17).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(18).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(19).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(1).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(2).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(3).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(4).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(5).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(6).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(7).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(8).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(9).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(10).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(11).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(12).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(13).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(14).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(15).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(16).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(17).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(18).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\test(19).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(1).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(2).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(3).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(1).xml
+C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(1).xml
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
