@@ -51,7 +51,7 @@ public class Reader {
     }
 
 
-    Page readDataFromXMLFile(File file_fromFilePath) {
+    public Page readDataFromXMLFile(File file_fromFilePath) {
 
         try {
             if (file_fromFilePath.exists()) {

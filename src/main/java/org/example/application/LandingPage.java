@@ -23,7 +23,7 @@ public class LandingPage extends JFrame implements ActionListener {
         this.setSize(800, 500);
 
         JPanel topPanel = new JPanel();
-        pagePanel = new JPanel(new GridLayout(0,5,10,10));
+        pagePanel = new JPanel(new GridLayout(0, 5, 10, 10));
 
 
         createPageButton.setFocusable(false);
@@ -33,7 +33,7 @@ public class LandingPage extends JFrame implements ActionListener {
         topPanel.add(openBackupButton, BorderLayout.WEST);
 
 
-Load_Reload_PagePanel();
+        Load_Reload_PagePanel();
 
 
         JScrollPane scrollPane = new JScrollPane(pagePanel,
@@ -59,9 +59,9 @@ Load_Reload_PagePanel();
     }
 
 
-    public File Load_Reload_PagePanel(){
+    public File Load_Reload_PagePanel() {
         pagePanel.removeAll();
-        
+
         for (File file : reader.getAllFilesInPageDirectory()) {
             JButton PageButton = new JButton(file.getName().replace(".xml", ""));
 
@@ -74,28 +74,25 @@ Load_Reload_PagePanel();
 
         return null;
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == createPageButton) {
-            writer = new Writer( "title");
+            writer = new Writer("title");
             Load_Reload_PagePanel();
         }
     }
 }
 
 
-
-
-
-
-class BorderLayouts{
+class BorderLayouts {
 
 
     public static void main(String[] args) {
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
-        frame.setSize(400,400);
+        frame.setSize(400, 400);
         //frame.setLayout(new BorderLayout(10,10)); //sets a gap if wanted, between layers
 
 
@@ -113,14 +110,14 @@ class BorderLayouts{
         panel4.setBackground(Color.PINK);
         panel5.setBackground(Color.BLACK);
 
-        panel1.setPreferredSize(new Dimension(100,100));
-        panel2.setPreferredSize(new Dimension(100,100));
-        panel3.setPreferredSize(new Dimension(100,100));
-        panel4.setPreferredSize(new Dimension(100,100));
-        panel5.setPreferredSize(new Dimension(100,100));
+        panel1.setPreferredSize(new Dimension(100, 100));
+        panel2.setPreferredSize(new Dimension(100, 100));
+        panel3.setPreferredSize(new Dimension(100, 100));
+        panel4.setPreferredSize(new Dimension(100, 100));
+        panel5.setPreferredSize(new Dimension(100, 100));
 
-        panel6.setPreferredSize(new Dimension(100,100));
-        panel7.setPreferredSize(new Dimension(100,100));
+        panel6.setPreferredSize(new Dimension(100, 100));
+        panel7.setPreferredSize(new Dimension(100, 100));
 
         // can also add panels inside panels
         panel6.add(panel7, BorderLayout.NORTH);
@@ -132,7 +129,6 @@ class BorderLayouts{
         frame.add(panel3, BorderLayout.SOUTH);
         frame.add(panel4, BorderLayout.EAST);
         frame.add(panel5, BorderLayout.WEST);
-
 
 
     }
