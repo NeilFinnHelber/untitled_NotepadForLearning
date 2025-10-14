@@ -20,6 +20,9 @@ public class Subheader {
 
     public Subheader(){}
 
+    public Subheader(String title){
+        this.title = title;
+    }
 
 
     
