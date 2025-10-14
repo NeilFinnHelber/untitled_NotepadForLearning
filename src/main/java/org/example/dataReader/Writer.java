@@ -1,7 +1,5 @@
 package org.example.dataReader;
 
-import com.fasterxml.jackson.core.exc.StreamWriteException;
-import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import org.example.dataReader.ObjectClasses.Header;
 import org.example.dataReader.ObjectClasses.Page;
@@ -9,6 +7,7 @@ import org.example.dataReader.ObjectClasses.Subheader;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -63,6 +62,7 @@ public class Writer {
             }
 
         } else {
+            JOptionPane.showMessageDialog(null, "A file name can only contain  A-Z  0-99  .  #  öüä", "Error", JOptionPane.ERROR_MESSAGE);
             throw new RuntimeException("Invalid file name");
         }
 
@@ -202,6 +202,7 @@ public class Writer {
         page = reader.readDataFromXMLFile(file_fromFilePath);
         List<Header> headers = page.getHeaders();
 
+
         if (thisHeader != null) {
             for (Header header : headers) {
                 if (header.getTitle().equals(thisHeader.getTitle())) {
@@ -243,6 +244,65 @@ public class Writer {
         }
     }
 
+    public void writeToFile_removeHeader(String pageFileName, int headerID) {
+        file_fromFilePath = validateFileName(pageFileName, false);
+
+        page = new Page();
+        page = reader.readDataFromXMLFile(file_fromFilePath);
+        List<Header> headers = page.getHeaders();
+
+        if (headers.size() >= headerID && headers.get(headerID) != null) {
+            headers.remove(headerID);
+
+
+            page.setHeaders(headers);
+            System.out.println("header size "+headers.size());
+
+            try {
+                mapper.writerWithDefaultPrettyPrinter().writeValue(file_fromFilePath, page);
+
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            System.out.println("error in writeToFile_deleteHeader");
+            throw new RuntimeException("header cant be removed, it doesn't exists");
+        }
+    }
+
+    public void writeToFile_removeSubheader(String pageFileName, int headerID, int subheaderID) {
+        file_fromFilePath = validateFileName(pageFileName, false);
+
+        page = new Page();
+        page = reader.readDataFromXMLFile(file_fromFilePath);
+        List<Header> headers = page.getHeaders();
+        List<Subheader> subheaders = headers.get(headerID).getSubheaders();
+
+        System.out.println("before "+ subheaders.size());
+        if (headers.get(headerID) != null && !subheaders.isEmpty()) {
+            subheaders.remove(subheaderID);
+
+            System.out.println("after removale " + subheaders.size());
+            page.setHeaders(headers);
+
+            System.out.println("page says  " + page.getHeaders().size());
+            try {
+                mapper.writerWithDefaultPrettyPrinter().writeValue(file_fromFilePath, page);
+
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            System.out.println("error in writeToFile_deleteSubheader");
+            throw new RuntimeException("subheader or header doesn't exist");
+        }
+
+    }
+
+    public void writeToFile_removePage(File file) {
+       file.delete();
+    }
+
 
     public static void main(String[] args) {
         Writer W = new Writer();
@@ -275,5 +335,10 @@ public class Writer {
         //W.writeToFile_createSubheader("title", 0, "a tasty pizza the action");
 
         //W.writeToFile_updateSubheader("title", 0, 0, "new subheader title", "",tempSearchTerms);
+
+
+        //W.writeToFile_removeSubheader("testingEdits", 1, 0);
+
+        //W.writeToFile_removeHeader("testingEdits", 12);
     }
 }

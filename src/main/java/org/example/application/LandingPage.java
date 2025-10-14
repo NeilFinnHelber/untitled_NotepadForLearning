@@ -7,6 +7,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.File;
 
 public class LandingPage extends JFrame implements ActionListener {
@@ -15,6 +17,7 @@ public class LandingPage extends JFrame implements ActionListener {
     JButton openBackupButton = new JButton("Open Backup");
     JButton createPageButton = new JButton("Create Page");
     JPanel pagePanel;
+    JButton PageButton;
 
     public LandingPage() {
         this.setTitle("Title");
@@ -63,10 +66,50 @@ public class LandingPage extends JFrame implements ActionListener {
         pagePanel.removeAll();
 
         for (File file : reader.getAllFilesInPageDirectory()) {
-            JButton PageButton = new JButton(file.getName().replace(".xml", ""));
+            String simpleFileName = file.getName().replace(".xml", "");
 
-            PageButton.setPreferredSize(new Dimension(100, 350));
-            pagePanel.add(PageButton);
+            PageButton = new JButton(simpleFileName);
+            PageButton.addActionListener(e -> {
+                PageView pageView = new PageView(file.getAbsoluteFile());
+                pageView.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+
+                pageView.addWindowListener(new WindowAdapter() {
+
+                    @Override
+                    public void windowClosing(WindowEvent e) {
+int choice = pageView.checkIfAlreadySaved();
+
+                        if (choice == JOptionPane.YES_OPTION || choice == JOptionPane.NO_OPTION) pageView.dispose();
+
+                    }
+                });
+
+            });
+
+
+            JPanel buttonPanel = new JPanel(new BorderLayout());
+            PageButton.setPreferredSize(new Dimension(100, 300));
+            JButton removePageButton = new JButton("Remove Page");
+            removePageButton.setPreferredSize(new Dimension(100, 50));
+            removePageButton.setFocusable(false);
+
+
+            buttonPanel.add(removePageButton, BorderLayout.NORTH);
+            buttonPanel.add(PageButton, BorderLayout.CENTER);
+
+            pagePanel.add(buttonPanel);
+
+
+            removePageButton.addActionListener(e -> {
+                writer = new Writer();
+
+                int confirmRemove_OfPage = JOptionPane.showConfirmDialog(this, "do you really want to delete this page? ", "remove page?: " + simpleFileName,  JOptionPane.YES_NO_OPTION);
+
+                if (confirmRemove_OfPage == JOptionPane.YES_OPTION) {
+                    writer.writeToFile_removePage(file);
+                    Load_Reload_PagePanel();
+                }
+            });
 
         }
         pagePanel.revalidate();
@@ -78,9 +121,19 @@ public class LandingPage extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == createPageButton) {
-            writer = new Writer("title");
-            Load_Reload_PagePanel();
+            String input = JOptionPane.showInputDialog(this, "please enter a name for the page: ", "enter page name", JOptionPane.QUESTION_MESSAGE);
+
+            if (input != null) {
+                if (input.isBlank()) JOptionPane.showMessageDialog(this, "cant create file without name", "warning", JOptionPane.WARNING_MESSAGE);
+                else {
+                    writer = new Writer(input);
+
+                    Load_Reload_PagePanel();
+                }
+            }
         }
+
+
     }
 }
 
