@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.example.dataReader.WriterAndReaderTest" tests="20" skipped="0" failures="0" errors="0" timestamp="2025-10-11T19:47:05.883Z" hostname="VERKKO-HALKEAMA" time="1.302">
+<testsuite name="org.example.dataReader.WriterAndReaderTest" tests="20" skipped="0" failures="0" errors="0" timestamp="2025-10-15T17:02:44.595Z" hostname="VERKKO-HALKEAMA" time="1.776">
   <properties/>
-  <testcase name="setupCreatingFile_forEditTests()" classname="org.example.dataReader.WriterAndReaderTest" time="0.109"/>
-  <testcase name="TestAllDirectReaders()" classname="org.example.dataReader.WriterAndReaderTest" time="0.442"/>
-  <testcase name="testAllEditsTogheter()" classname="org.example.dataReader.WriterAndReaderTest" time="0.193"/>
-  <testcase name="File name test: &quot;test&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.066"/>
-  <testcase name="File name test: &quot;hello world&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.017"/>
-  <testcase name="File name test: &quot;hello-world&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.008"/>
-  <testcase name="File name test: &quot;hello_world&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.009"/>
-  <testcase name="File name test: &quot;hello#world&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.008"/>
-  <testcase name="File name test: &quot;öööäääüüü&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.007"/>
-  <testcase name="File name test: &quot;fihwerhstfuierghserihghksehkhaospfhseorgpbesribgfsepjfhsweshfaiefosberdhgsebrbfs&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.008"/>
-  <testcase name="File name test: &quot;test&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.041"/>
-  <testcase name="File name test: &quot;####&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.014"/>
-  <testcase name="File name test: &quot;...p&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.007"/>
-  <testcase name="File name test: &quot;-----------------------------------------------------------------------&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.008"/>
-  <testcase name="File name test: &quot;_____&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.008"/>
-  <testcase name="createHeaderTest()" classname="org.example.dataReader.WriterAndReaderTest" time="0.033"/>
-  <testcase name="updateSubheaderTest()" classname="org.example.dataReader.WriterAndReaderTest" time="0.099"/>
+  <testcase name="setupCreatingFile_forEditTests()" classname="org.example.dataReader.WriterAndReaderTest" time="0.236"/>
+  <testcase name="TestAllDirectReaders()" classname="org.example.dataReader.WriterAndReaderTest" time="0.62"/>
+  <testcase name="testAllEditsTogheter()" classname="org.example.dataReader.WriterAndReaderTest" time="0.235"/>
+  <testcase name="File name test: &quot;test&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.082"/>
+  <testcase name="File name test: &quot;hello world&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.015"/>
+  <testcase name="File name test: &quot;hello-world&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.011"/>
+  <testcase name="File name test: &quot;hello_world&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.015"/>
+  <testcase name="File name test: &quot;hello#world&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.01"/>
+  <testcase name="File name test: &quot;öööäääüüü&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.009"/>
+  <testcase name="File name test: &quot;fihwerhstfuierghserihghksehkhaospfhseorgpbesribgfsepjfhsweshfaiefosberdhgsebrbfs&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.011"/>
+  <testcase name="File name test: &quot;test&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.055"/>
+  <testcase name="File name test: &quot;####&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.015"/>
+  <testcase name="File name test: &quot;...p&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.009"/>
+  <testcase name="File name test: &quot;-----------------------------------------------------------------------&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.009"/>
+  <testcase name="File name test: &quot;_____&quot;" classname="org.example.dataReader.WriterAndReaderTest" time="0.011"/>
+  <testcase name="createHeaderTest()" classname="org.example.dataReader.WriterAndReaderTest" time="0.049"/>
+  <testcase name="updateSubheaderTest()" classname="org.example.dataReader.WriterAndReaderTest" time="0.127"/>
   <testcase name="updateHeaderTest()" classname="org.example.dataReader.WriterAndReaderTest" time="0.05"/>
-  <testcase name="updatePageComponentsTest()" classname="org.example.dataReader.WriterAndReaderTest" time="0.022"/>
-  <testcase name="createSubheaderTest()" classname="org.example.dataReader.WriterAndReaderTest" time="0.042"/>
+  <testcase name="updatePageComponentsTest()" classname="org.example.dataReader.WriterAndReaderTest" time="0.028"/>
+  <testcase name="createSubheaderTest()" classname="org.example.dataReader.WriterAndReaderTest" time="0.051"/>
   <system-out><![CDATA[C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(1).xml
 C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(2).xml
 C:\Users\Neilh\AppData\Local\untitled-learnApp\testingEdits(3).xml
