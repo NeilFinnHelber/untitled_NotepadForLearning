@@ -1,5 +1,6 @@
 package org.example.application;
 
+import org.example.application.components.MenuBarClass;
 import org.example.dataReader.ObjectClasses.Header;
 import org.example.dataReader.ObjectClasses.Page;
 import org.example.dataReader.ObjectClasses.Subheader;
@@ -26,14 +27,13 @@ public class PageView extends JFrame implements ActionListener {
     JScrollPane treeScrollPane;
 
     JButton createHeaderButton;
-    JButton removeButton;
     JButton removeSubheaderButton;
     JButton removeHeaderButton;
 
     JButton createSubheaderButton;
 
     Page page;
-    List<Header> headers;
+    public List<Header> headers;
     List<Subheader> subheaders;
     Reader reader = new Reader();
     Writer writer = new Writer();
@@ -48,10 +48,10 @@ public class PageView extends JFrame implements ActionListener {
     JTextArea headerText;
     JTextArea subheaderText;
 
-    File file_fromFilePath;
+    public File file_fromFilePath;
 
-    private final List<JTextField> pageTitleField = new ArrayList<>();
-    private final List<JTextArea> pageTextArea = new ArrayList<>();
+    private String mainPageTitle = "";
+    private String mainPageText = "";
 
     private final List<JTextField> allHeaderTitleFields = new ArrayList<>();
     private final List<JTextArea> allHeaderTextAreas = new ArrayList<>();
@@ -65,7 +65,8 @@ public class PageView extends JFrame implements ActionListener {
     public PageView(File file_fromFilePath) {
         this.file_fromFilePath = file_fromFilePath;
 
-        this.setTitle("title of page");
+        String pageName = file_fromFilePath.getName().substring(0, file_fromFilePath.getName().length() - 4);
+        this.setTitle(pageName);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         this.setSize(800, 550);
@@ -108,7 +109,12 @@ public class PageView extends JFrame implements ActionListener {
         pageTitle.setText(page.getTitle());
         pageText.setText(page.getText());
 
-        
+        mainPageTitle = page.getTitle();
+        mainPageText = page.getText();
+
+
+        MenuBarClass menuBarClass = new MenuBarClass();
+        this.setJMenuBar(menuBarClass.menuBarFromClass(null, this));
 
         this.setLayout(new BorderLayout());
 
@@ -161,14 +167,13 @@ public class PageView extends JFrame implements ActionListener {
         createHeaderButton = new JButton("Create Header");
         createHeaderButton.addActionListener(this);
 
-        removeButton = new JButton("Remove Header/Subheader");
-        removeButton.addActionListener(this);
+
 
         //createSubheaderButton = new JButton("Create Subheader");
         //createSubheaderButton.addActionListener(this);
 
         rootNodeButtonPanel.add(createHeaderButton);
-        rootNodeButtonPanel.add(removeButton);
+
         //rootNodeButtonPanel.add(createSubheaderButton);
 
         treeNodePanel.add(rootNodeButtonPanel, BorderLayout.WEST);
@@ -180,8 +185,8 @@ public class PageView extends JFrame implements ActionListener {
 
     public void load_reload_mainPanel(File file_fromFilePath) {
         mainHeaderPanel.removeAll();
-        pageTitleField.clear();
-        pageTextArea.clear();
+        mainPageTitle = "";
+        mainPageText = "";
         allHeaderTitleFields.clear();
         allHeaderTextAreas.clear();
         allSubheaderTitleFields.clear();
@@ -412,7 +417,11 @@ public class PageView extends JFrame implements ActionListener {
             writer.writeToFile_updateHeader(pageFileName, headerID, headerTitle, null, searchTerms);
         }
 
-        
+
+        writer.writeToFile_updatePage(pageFileName, mainPageTitle, mainPageText);
+
+
+        System.out.println("saved page");
     }
 
     public int checkIfAlreadySaved() {
@@ -427,6 +436,31 @@ public class PageView extends JFrame implements ActionListener {
             return JOptionPane.CANCEL_OPTION;
     }
 
+public void createHeader() {
+    String pageFileName = file_fromFilePath.getName().substring(0, file_fromFilePath.getName().length() - 4); //removes .xml from the fileName
+    page = reader.readDataFromXMLFile(file_fromFilePath);
+    headers = page.getHeaders();
+
+    String input = JOptionPane.showInputDialog("please type in a title for the header");
+    if (input != null) {
+        if (input.isBlank()) {
+            JOptionPane.showMessageDialog(null, "wont create header without title", "warning", JOptionPane.WARNING_MESSAGE);//if the input is "" BLANK, nothing shall be created
+        } else {
+
+            System.out.println(pageFileName);
+            saveDataToPage();
+
+            writer.writeToFile_createHeader(pageFileName, input);
+
+            //reload the panels
+            load_reload_ExpandablePanel(file_fromFilePath);
+            load_reload_mainPanel(file_fromFilePath);
+
+
+        }
+    }
+}
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -435,41 +469,7 @@ public class PageView extends JFrame implements ActionListener {
         headers = page.getHeaders();
 
         if (e.getSource() == createHeaderButton) {
-
-
-            String input = JOptionPane.showInputDialog("please type in a title for the header");
-            if (input != null) {
-                if (input.isBlank()) {
-                    JOptionPane.showMessageDialog(null, "wont create header without title", "warning", JOptionPane.WARNING_MESSAGE);//if the input is "" BLANK, nothing shall be created
-                } else {
-
-                    System.out.println(pageFileName);
-                    saveDataToPage();
-
-                    writer.writeToFile_createHeader(pageFileName, input);
-
-                    //reload the panels
-                    load_reload_ExpandablePanel(file_fromFilePath);
-                    load_reload_mainPanel(file_fromFilePath);
-
-
-                }
-            }
-        }
-
-        if (e.getSource() == removeButton) {
-            Object[] options = {"remove header", "remove subheader"};
-
-            List<Object> optionsOfHeaders = Arrays.asList(headers.toArray());
-
-
-            Object dropdownMenuSelectionObject = JOptionPane.showInputDialog(this, "choose", "Menu", JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
-            String dropdownMenuChosenOption = dropdownMenuSelectionObject.toString();
-
-            if (dropdownMenuChosenOption.equals("remove header")) {
-                System.out.println(headers.size());
-                Object headersDropdownMenuSelectionObject = JOptionPane.showInputDialog(this, "choose header to remove", "Menu", JOptionPane.PLAIN_MESSAGE, null, optionsOfHeaders.toArray(), optionsOfHeaders.getFirst());
-            }
+            createHeader();
         }
 
     }

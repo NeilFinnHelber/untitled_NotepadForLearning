@@ -1,0 +1,10 @@
+R:\Github\untitled-learnApp\src\main\java\org\example\Main.java 
+R:\Github\untitled-learnApp\src\main\java\org\example\application\LandingPage.java 
+R:\Github\untitled-learnApp\src\main\java\org\example\application\PageView.java 
+R:\Github\untitled-learnApp\src\main\java\org\example\application\components\MenuBarClass.java 
+R:\Github\untitled-learnApp\src\main\java\org\example\dataReader\OutlineEditor.java 
+R:\Github\untitled-learnApp\src\main\java\org\example\dataReader\Reader.java 
+R:\Github\untitled-learnApp\src\main\java\org\example\dataReader\Writer.java 
+R:\Github\untitled-learnApp\src\main\java\org\example\dataReader\ObjectClasses\Header.java 
+R:\Github\untitled-learnApp\src\main\java\org\example\dataReader\ObjectClasses\Page.java 
+R:\Github\untitled-learnApp\src\main\java\org\example\dataReader\ObjectClasses\Subheader.java 

@@ -1,0 +1,57 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="untitled-learnApp:jar4">
+    <output-path>$PROJECT_DIR$/out/artifacts/untitled_learnApp_jar4</output-path>
+    <root id="archive" name="untitled-learnApp.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="dir-copy" path="$PROJECT_DIR$/build/classes/java/main" />
+      <element id="module-source" name="untitled-learnApp.main" />
+      <element id="library" level="project" name="1a795bbada928f935016a29e154fa572/classes" />
+      <element id="library" level="project" name="8bc8cebaa4756146dc6a0fab191b8bb6-PS/classes" />
+      <element id="library" level="project" name="c77dda0455e1b9571b4e8ca5959332b9/classes" />
+      <element id="library" level="project" name="gradle-api-8.14.jar" />
+      <element id="library" level="project" name="gradle-base-services-8.14.jar" />
+      <element id="library" level="project" name="gradle-base-services-groovy-8.14.jar" />
+      <element id="library" level="project" name="gradle-core-8.14.jar" />
+      <element id="library" level="project" name="gradle-core-api-8.14.jar" />
+      <element id="library" level="project" name="gradle-core-kotlin-extensions-8.14.jar" />
+      <element id="library" level="project" name="gradle-installation-beacon-8.14.jar" />
+      <element id="library" level="project" name="gradle-kotlin-dsl-8.14.jar" />
+      <element id="library" level="project" name="gradle-kotlin-dsl-extensions-8.14.jar" />
+      <element id="library" level="project" name="gradle-kotlin-dsl-shared-runtime-8.14.jar" />
+      <element id="library" level="project" name="gradle-kotlin-dsl-tooling-models-8.14.jar" />
+      <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.17.2" />
+      <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.17.2" />
+      <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.17.2" />
+      <element id="library" level="project" name="Gradle: com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.17.2" />
+      <element id="library" level="project" name="Gradle: com.fasterxml.woodstox:woodstox-core:6.7.0" />
+      <element id="library" level="project" name="Gradle: org.apiguardian:apiguardian-api:1.1.2" />
+      <element id="library" level="project" name="Gradle: org.codehaus.woodstox:stax2-api:4.2.2" />
+      <element id="library" level="project" name="Gradle: org.junit.jupiter:junit-jupiter-api:5.10.0" />
+      <element id="library" level="project" name="Gradle: org.junit.jupiter:junit-jupiter-engine:5.10.0" />
+      <element id="library" level="project" name="Gradle: org.junit.jupiter:junit-jupiter-params:5.10.0" />
+      <element id="library" level="project" name="Gradle: org.junit.jupiter:junit-jupiter:5.10.0" />
+      <element id="library" level="project" name="Gradle: org.junit.platform:junit-platform-commons:1.10.0" />
+      <element id="library" level="project" name="Gradle: org.junit.platform:junit-platform-engine:1.10.0" />
+      <element id="library" level="project" name="Gradle: org.junit.platform:junit-platform-launcher:1.10.0" />
+      <element id="library" level="project" name="Gradle: org.opentest4j:opentest4j:1.3.0" />
+      <element id="library" level="project" name="groovy-3.0.24.jar" />
+      <element id="library" level="project" name="groovy-ant-3.0.24.jar" />
+      <element id="library" level="project" name="groovy-astbuilder-3.0.24.jar" />
+      <element id="library" level="project" name="groovy-console-3.0.24.jar" />
+      <element id="library" level="project" name="groovy-datetime-3.0.24.jar" />
+      <element id="library" level="project" name="groovy-dateutil-3.0.24.jar" />
+      <element id="library" level="project" name="groovy-groovydoc-3.0.24.jar" />
+      <element id="library" level="project" name="groovy-json-3.0.24.jar" />
+      <element id="library" level="project" name="groovy-nio-3.0.24.jar" />
+      <element id="library" level="project" name="groovy-sql-3.0.24.jar" />
+      <element id="library" level="project" name="groovy-templates-3.0.24.jar" />
+      <element id="library" level="project" name="groovy-test-3.0.24.jar" />
+      <element id="library" level="project" name="groovy-xml-3.0.24.jar" />
+      <element id="library" level="project" name="javaparser-core-3.17.0.jar" />
+      <element id="library" level="project" name="kotlin-reflect-2.0.21.jar" />
+      <element id="library" level="project" name="kotlin-stdlib dependencies" />
+    </root>
+  </artifact>
+</component>
