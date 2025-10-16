@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="untitled-learnApp:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/untitled_learnApp_jar</output-path>
+    <root id="archive" name="untitled-learnApp.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/out/artifacts/untitled_learnApp_jar2/MANIFEST.MF" />
+        <element id="module-output" name="untitled-learnApp.main" />
+        <element id="module-source" name="untitled-learnApp.main" />
+      </element>
+    </root>
+  </artifact>
+</component>
